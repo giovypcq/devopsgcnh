@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_2318102998c648ab81ebf9282c92912f }}/giovypcq/imagenesaleaorias:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_2318102998c648ab81ebf9282c92912f }}/imagenesaleaorias:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -48,4 +48,4 @@ jobs:
         app-name: 'imagenesaleatorias'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_c56d83b4855141e68ef6c85e3ffd7187 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_2318102998c648ab81ebf9282c92912f }}/giovypcq/imagenesaleaorias:${{ github.sha }}'
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_2318102998c648ab81ebf9282c92912f }}/imagenesaleaorias:${{ github.sha }}'
